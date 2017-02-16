@@ -15,6 +15,6 @@
     </style>
   </defs>
 
-  <image class="my-image" xlink:href="https://github.com/scriptype/A/blob/master/f.png?raw=true" /> 
+  <image class="my-image" xlink:href="https://raw.githubusercontent.com/scriptype/A/master/f.png" /> 
   
 </svg>
