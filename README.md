@@ -2,4 +2,4 @@
 
 A project.
 
-![test svg](https://cdn.rawgit.com/scriptype/A/master/test.svg)
+![test2 svg](https://cdn.rawgit.com/scriptype/A/master/test2.svg)
