@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 300">
+
+  <defs>
+    <style>
+      .packagejson {
+        font: 400 normal 1.6em/1.6
+          "Operator Mono",
+          "Fira Code",
+          "Thesis Sans Mono",
+          "Source Code Pro",
+          "Menlo",
+          "Monaco",
+          "Lucida Console",
+          "Courier",
+          monospace
+      }
+    </style>
+  </defs>
+
+  <g class="packagejson">
+
+    <text x="35" y="120" class="packagejson__scr">
+      <tspan>"</tspan><!--
+      --><tspan>scr</tspan><!--
+      --><tspan>ipts</tspan><!--
+      --><tspan>"</tspan><!--
+      --><tspan>: </tspan><!--
+      --><tspan>{</tspan>
+    </text>
+
+    <text x="35" y="155" class="packagejson__scr-line">
+      <tspan>"</tspan><!--
+      --><tspan>start</tspan><!--
+      --><tspan>"</tspan><!--
+      --><tspan>: </tspan><!--
+      --><tspan>"</tspan><!--
+      --><tspan>salinger start</tspan><!--
+      --><tspan>"</tspan>
+    </text>
+
+    <text x="35" y="190" class="packagejson__scr-line">
+      <tspan>}</tspan>
+    </text>
+
+  </g>
+
+</svg>
