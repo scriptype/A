@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 600">
+  
+  <defs>
+    <style>
+      .my-rect {
+        animation: red-black linear 2s infinite;
+      }
+      
+      @keyframes red-black {
+        50% {
+          fill: red;
+        }
+      }
+    </style>
+  </defs>
+  
+  <rect class="my-rect" x="300" y="100" width="300" height="300"></rect>
+  
+  <image xlink:href="https://cdn.rawgit.com/scriptype/A/master/f.png" />
+  
+</svg>
