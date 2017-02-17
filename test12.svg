@@ -1,0 +1,456 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 300">
+
+  <defs>
+    <style>
+
+      .pre-white-space {
+        white-space: pre;
+      }
+
+      /* Base colorscheme: wimstefan/Lightning.vim */
+      .co-normal {
+        fill: #1c1c1c;
+      }
+
+      .co-special {
+        fill: #00af5f;
+      }
+
+      .co-string {
+        fill: #005f87;
+      }
+
+      .co-comment {
+        fill: #808080;
+      }
+
+      .co-type1 {
+        fill: #6579ff;
+      }
+
+      .co-emphasize1 {
+        fill: #D62900;
+      }
+
+      .co-emphasize2 {
+        fill: #D69900; 
+      }
+
+      .co-emphasize1-stroke {
+        stroke: #D62900;
+      }
+
+      .co-emphasize2-stroke {
+        stroke: #D69900; 
+      }
+
+      .code {
+        font: 400 normal 1.6em/1.6
+          "Operator Mono",
+          "Fira Code",
+          "Thesis Sans Mono",
+          "Source Code Pro",
+          "Menlo",
+          "Monaco",
+          "Lucida Console",
+          "Courier",
+          monospace;
+      }
+
+      /*
+        Animation timeline:
+        0.0s - 1.6s: packagejson enters
+        1.6s - 2.0s: pause
+        2.0s - 2.3s: colored start
+        2.0s - 2.5s: line for start
+        2.3s - 2.5s: start description
+        2.5s - 2.8s: colored foo
+        2.5s - 3.0s: line for foo
+        2.8s - 3.0s: foo description
+        3.0s - 4.0s: pause
+        4.0s - 5.0s: packagejson exits
+        5.0s - 6.6s: tasksjs enters
+        6.6s - 7.0s: pause
+        7.0s - 7.4s: grayout parts of tasksjs
+        7.4s - 8.0s: draw parameter line
+        8.0s - 8.3s: color the parameter text
+      */
+
+      /*
+       *
+       *
+       * PACKAGE_JSON
+       *
+       *
+       */
+
+      .packagejson {
+        transform: translate(80%);
+        opacity: 0;
+        animation:
+          packagejson
+          15s
+          infinite;
+      }
+
+      .packagejson__line {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+      }
+
+      .packagejson__line1 {
+        animation:
+          packagejson-line1
+          15s
+          linear
+          infinite;
+      }
+
+      .packagejson__line2 {
+        animation:
+          packagejson-line2
+          15s
+          linear
+          infinite;
+      }
+
+      .packagejson__colored-start {
+        opacity: 0;
+        animation:
+          packagejson-colored-start
+          15s
+          infinite;
+      }
+
+      .packagejson__colored-foo {
+        opacity: 0;
+        animation:
+          packagejson-colored-foo
+          15s
+          infinite;
+      }
+
+      .packagejson__desc {
+        font-size: .45em;
+      }
+
+      .packagejson__desc1 {
+        opacity: 0;
+        animation:
+          packagejson-desc1
+          15s
+          infinite;
+      }
+
+      .packagejson__desc2 {
+        opacity: 0;
+        animation:
+          packagejson-desc2
+          15s
+          infinite;
+      }
+
+      @keyframes packagejson {
+        10.666666666666666%,
+        26.666666666666668% {
+          transform: translate(0);
+          opacity: 1;
+        }
+        33.333333333333336%, to {
+          transform: translate(0);
+          opacity: 1;
+          transform: translate(-80%);
+          opacity: 0;
+        }
+      }
+
+      @keyframes packagejson-colored-start {
+        13.333333333333334% {
+          opacity: 0;
+        }
+        15.333333333333332%, to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes packagejson-line1 {
+        13.333333333333334% {
+          stroke-dashoffset: 100;
+        }
+        16.666666666666668%, to {
+          stroke-dashoffset: 200;
+        }
+      }
+
+      @keyframes packagejson-desc1 {
+        15.333333333333332% {
+          opacity: 0;
+        }
+        16.666666666666668%, to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes packagejson-colored-foo {
+        16.666666666666668% {
+          opacity: 0;
+        }
+        18.666666666666664%, to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes packagejson-line2 {
+        16.666666666666668% {
+          stroke-dashoffset: 100;
+        }
+        20%, to {
+          stroke-dashoffset: 200;
+        }
+      }
+
+      @keyframes packagejson-desc2 {
+        18.666666666666664% {
+          opacity: 0;
+        }
+        20%, to {
+          opacity: 1;
+        }
+      }
+
+      /*
+       *
+       *
+       * TASKS_JS
+       *
+       *
+       */
+
+      .tasksjs {
+        font-size: 1.2em;
+        transform: translate(80%);
+        opacity: 0;
+        animation:
+          tasksjs
+          15s
+          infinite;
+      }
+
+      .tasksjs__grayout {
+        opacity: 0;
+        animation:
+          tasksjs-grayout
+          15s
+          infinite;
+      }
+
+      .tasksjs__grayout tspan {
+        fill: #ccc;
+      }
+
+      .tasksjs__paramline {
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+        animation:
+          tasksjs-paramline
+          15s
+          linear
+          infinite;
+      }
+
+      .tasksjs__coloredparam {
+        opacity: 0;
+        animation:
+          tasksjs-color-param
+          15s
+          infinite;
+      }
+
+      @keyframes tasksjs {
+        33.333333333333336% {
+          transform: translate(80%);
+          opacity: 0;
+        }
+        43.99999999999999%, to {
+          transform: translate(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes tasksjs-grayout {
+        46.66666666666667% {
+          opacity: 0;
+        }
+        49.33333333333334%, to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes tasksjs-paramline {
+        49.33333333333334% {
+          stroke-dashoffset: 200;
+        }
+        53.333333333333336%, to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes tasksjs-color-param {
+        53.333333333333336% {
+          opacity: 0;
+        }
+        55.333333333333336%, to {
+          opacity: 1;
+        }
+      }
+
+    </style>
+  </defs>
+  
+  <g class="code packagejson">
+
+    <text
+      x="280"
+      y="95"
+      class="packagejson__desc packagejson__desc1 co-emphasize1">
+      TASK NAME
+    </text>
+
+    <path
+      d="M 310 100 C 320 160, 360 100, 360 135" 
+      stroke-width="2" 
+      class="co-emphasize1-stroke packagejson__line packagejson__line1" 
+      fill="transparent" />
+
+    <text
+      x="395"
+      y="90"
+      class="packagejson__desc packagejson__desc2 co-emphasize2">
+      A PARAMETER
+    </text>
+
+    <path
+      d="M 425 95 C 400 120, 460 110, 435 135"
+      stroke-width="2"
+      class="co-emphasize2-stroke packagejson__line packagejson__line2"
+      fill="transparent" />
+
+    <text x="35" y="120" class="code__line">
+      <tspan class="co-normal">"</tspan><!--
+      --><tspan class="co-type1">scripts</tspan><!--
+      --><tspan class="co-normal">"</tspan><!--
+      --><tspan class="co-normal">: </tspan><!--
+      --><tspan class="co-special">{</tspan>
+    </text>
+
+    <text x="35" y="155" class="code__line">
+      <tspan class="pre-white-space co-normal">  "</tspan><!--
+      --><tspan class="co-type1">start</tspan><!--
+      --><tspan class="co-normal">"</tspan><!--
+      --><tspan class="co-normal">: </tspan><!--
+      --><tspan class="co-normal">"</tspan><!--
+      --><tspan class="co-string">salinger </tspan><!--
+      --><tspan class="co-string">start </tspan><!--
+      --><tspan dx="-84.5" class="packagejson__colored-start co-emphasize1">start </tspan><!--
+      --><tspan class="co-string">foo</tspan><!--
+      --><tspan dx="-42.2" class="packagejson__colored-foo co-emphasize2">foo</tspan><!--
+      --><tspan class="co-normal">"</tspan>
+    </text>
+
+    <text x="35" y="190" class="code__line">
+      <tspan class="co-special">}</tspan>
+    </text>
+
+  </g>
+
+  <g class="code tasksjs">
+    
+    <path d="M 230 30 C 350 -40, 300 100, 330 130" stroke-width="2" class="co-emphasize2-stroke tasksjs__paramline" fill="transparent" />
+
+    <text x="35" y="45" class="code__line">
+      <tspan class="co-emphasize1">start</tspan><!--
+      --><tspan class="co-normal">(</tspan><!--
+      --><tspan class="co-emphasize2">parameterFromCLI</tspan><!--
+      --><tspan class="co-normal">) </tspan><!--
+      --><tspan class="co-type1">{</tspan>
+    </text>
+
+    <text x="35" y="70" class="code__line">
+      <tspan class="pre-white-space co-normal">  run(</tspan><!--
+      --><tspan class="co-string">'clean'</tspan><!--
+      --><tspan class="co-normal">)</tspan><!--
+      --><tspan class="co-normal">.then(_ => </tspan><!--
+      --><tspan class="co-type1">{</tspan>
+    </text>
+
+    <text x="35" y="70" class="code__line tasksjs__grayout">
+      <tspan class="pre-white-space co-normal">  run(</tspan><!--
+      --><tspan class="co-string">'clean'</tspan><!--
+      --><tspan class="co-normal">)</tspan><!--
+      --><tspan class="co-normal">.then(_ => </tspan><!--
+      --><tspan class="co-type1">{</tspan>
+    </text>
+
+    <text x="35" y="95" class="code__line">
+      <tspan class="pre-white-space co-normal">    run(</tspan><!--
+      --><tspan class="co-string">'copy_static'</tspan><!--
+      --><tspan class="co-normal">)</tspan>
+    </text>
+
+    <text x="35" y="95" class="code__line tasksjs__grayout">
+      <tspan class="pre-white-space co-normal">    run(</tspan><!--
+      --><tspan class="co-string">'copy_static'</tspan><!--
+      --><tspan class="co-normal">)</tspan>
+    </text>
+
+    <text x="35" y="120" class="code__line">
+      <tspan class="pre-white-space co-normal">    run(</tspan><!--
+      --><tspan class="co-string">'say_something'</tspan><!--
+      --><tspan class="co-normal">, </tspan><!--
+      --><tspan class="co-type1">{</tspan>
+    </text>
+    
+    <text x="35" y="145" class="code__line">
+      <tspan class="pre-white-space co-normal">      MESSAGE: </tspan>
+      <tspan class="co-normal">parameterFromCLI</tspan>
+      <tspan dx="-179.5" class="co-normal co-emphasize2 tasksjs__coloredparam">parameterFromCLI</tspan>
+    </text>
+
+    <text x="35" y="170" class="code__line">
+      <tspan class="pre-white-space co-type1">    }</tspan><!--
+      --><tspan class="co-normal">)</tspan>
+    </text>
+
+    <text x="35" y="195" class="code__line">
+      <tspan class="pre-white-space co-normal">    run(</tspan><!--
+      --><tspan class="co-string">'watch_static'</tspan><!--
+      --><tspan class="co-normal">)</tspan>
+    </text>
+
+    <text x="35" y="195" class="code__line tasksjs__grayout">
+      <tspan class="pre-white-space co-normal">    run(</tspan><!--
+      --><tspan class="co-string">'watch_static'</tspan><!--
+      --><tspan class="co-normal">)</tspan>
+    </text>
+
+    <text x="35" y="220" class="code__line">
+      <tspan class="pre-white-space co-comment">    // ...</tspan>
+    </text>
+
+    <text x="35" y="220" class="code__line tasksjs__grayout">
+      <tspan class="pre-white-space co-comment">    // ...</tspan>
+    </text>
+
+    <text x="35" y="245" class="code__line">
+      <tspan class="pre-white-space co-type1">  }</tspan><!--
+      --><tspan class="co-normal">)</tspan>
+    </text>
+
+    <text x="35" y="270" class="code__line">
+      <tspan class="pre-white-space co-type1">}</tspan><!--
+      --><tspan class="co-normal">,</tspan>
+    </text>
+
+  </g>
+
+</svg>
