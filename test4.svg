@@ -16,6 +16,6 @@
   
   <rect class="my-rect" x="300" y="100" width="300" height="300"></rect>
   
-  <image xlink:href="https://cdn.rawgit.com/scriptype/A/master/f.png" />
+  <image xlink:href="https://cdn.jsdelivr.net/gh/scriptype/A/f.png" />
   
 </svg>
